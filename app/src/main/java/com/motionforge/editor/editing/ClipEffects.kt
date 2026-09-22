@@ -12,12 +12,6 @@ import com.motionforge.editor.data.Clip
 /**
  * Maps a [Clip]'s color-adjustment and text-overlay settings onto Media3's GL video effects,
  * applied by the Transformer at export time.
- *
- * NOTE: built against the androidx.media3:media3-effect 1.4.1 API surface as documented at
- * developer.android.com/media/media3/transformer/effects. This module could not be compiled
- * against the real dependency in this sandbox (network access to Google's Maven repo is
- * blocked here), so double-check these exact class/method names against the Javadoc for the
- * Media3 version actually resolved when you first build in Android Studio.
  */
 object ClipEffects {
 

@@ -3,10 +3,10 @@ package com.motionforge.editor.editing
 import android.content.Context
 import android.net.Uri
 import androidx.media3.common.MediaItem
-import androidx.media3.effect.Effects
 import androidx.media3.transformer.Composition
 import androidx.media3.transformer.EditedMediaItem
 import androidx.media3.transformer.EditedMediaItemSequence
+import androidx.media3.transformer.Effects
 import androidx.media3.transformer.ExportException
 import androidx.media3.transformer.ExportResult
 import androidx.media3.transformer.ProgressHolder
@@ -26,10 +26,6 @@ import java.io.File
 /**
  * Drives androidx.media3:media3-transformer to render a [Project]'s timeline (trim + color
  * effects + text overlay per clip) into a single MP4.
- *
- * As with [ClipEffects], the exact Transformer/Composition API shapes here follow the
- * documented Media3 1.4.1 surface but could not be verified by compiling against the real
- * artifact in this sandbox.
  */
 class VideoExporter(private val context: Context) {
 
