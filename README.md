@@ -42,29 +42,20 @@ app/src/main/java/com/motionforge/editor/
   ui/navigation/ NavHost wiring the three screens together
 ```
 
-## ⚠️ Important: this was not compiled in the sandbox that generated it
-
-This code was written in a network-restricted cloud sandbox where `dl.google.com` (the
-Android SDK and Google's Maven repo, which hosts AndroidX/Compose/Media3) was blocked by
-policy. That means **`./gradlew build` could not be run here**, and the source has not been
-verified against the real compiler/SDK. It was written carefully against well-documented,
-stable APIs, but you should expect to fix a handful of small issues (an import, a renamed
-method, a version bump) the first time you open it in Android Studio — these will show up
-immediately as compiler errors, not silent bugs.
-
-The one area most likely to need adjustment is `editing/ClipEffects.kt` and
-`editing/VideoExporter.kt`: the exact class names/signatures for a few Media3 Transformer
-effect classes (`Contrast`, `RgbAdjustment`, `HslAdjustment`, `OverlayEffect`) were written
-from documentation recall rather than a verified compile. Both files have a comment flagging
-this.
-
 ## Building
+
+The code was written in a network-restricted sandbox that couldn't reach Google's Maven repo,
+so it couldn't be compiled there. It has since been built successfully by the
+`.github/workflows/build-apk.yml` GitHub Actions workflow (`./gradlew assembleDebug` on a
+GitHub-hosted runner) — see the Actions tab for the latest run and its `motionforge-debug-apk`
+artifact.
+
+To build locally:
 
 1. Open the project root in Android Studio (Koala/2024.1+ recommended) and let it sync — it
    will download the Android SDK components and the Gradle/AndroidX/Media3 dependencies
    listed in `gradle/libs.versions.toml`.
-2. Fix any compiler errors Android Studio surfaces (see the caveat above).
-3. Run on a device/emulator running Android 8.0 (API 26) or newer.
+2. Run on a device/emulator running Android 8.0 (API 26) or newer.
 
 Or from the command line once you have an Android SDK installed and `ANDROID_HOME` set:
 
